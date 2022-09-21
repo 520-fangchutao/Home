@@ -13,6 +13,11 @@ ssh-keygen -t rsa
 其中，id_rsa不带后缀为我们的私钥，不可公开❌
 id_rsa.pub显然就是我们的公钥了，可公开👏
 
-4.复制公钥id_rsa.pub的内容到github的settings
+4.复制公钥id_rsa.pub的内容到你的github🐱
+流程为：你的GitHub头像下的settings ——> 点击SSH and GPG keys项——> 粘贴内容进文本框
+
+5.进入仓库，复制code/ssh地址
+
+6.到本地git客户端键入git clone 地址，即可克隆你的远程仓库到本地主机👌
 
 
