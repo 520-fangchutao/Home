@@ -1,0 +1,30 @@
+SCUX_INTERFACE_HEADER_ID NUMBER                           用于接口表设计唯一关键字                                                                             
+SCUX_SESSION_ID          NUMBER                           用于接口表批次数据                                                                                   
+SCUX_SOURCE_CODE         VARCHAR2(30)                     来源系统代码，用于追溯字段                                                                           
+SCUX_SOURCE_NUM          VARCHAR2(50)  Y                  来源单据号，用于追溯字段                                                                             
+SCUX_SOURCE_ID           NUMBER        Y                  来源数据行ID，用于追溯数字型字段                                                                     
+SCUX_PROCESS_GROUP_ID    NUMBER        Y                  后台处理组ID，供分批、并发控制用                                                                     
+SCUX_PROCESS_STEP        VARCHAR2(100) Y                  当前程序处理到哪一个步骤                                                                             
+SCUX_PROCESS_STATUS      VARCHAR2(10)           'PENDING' 后台处理状态，约定：
+PENDING/用户已确认，数据可以导入
+RUNNING/通过验证，数据正在处理状态
+ERROR/出错，数据验证不通过
+COMPLETE/数据已经进入接口，用户不可以修改 
+SCUX_PROCESS_DATE        DATE          Y                  后台处理日期                                                                                         
+SCUX_PROCESS_MESSAGE     VARCHAR2(240) Y                  后台处理信息                                                                                         
+SCUX_ORG_NAME            VARCHAR2(240) Y                  业务实体名称                                                                                         
+SCUX_ORG_ID              NUMBER        Y                  业务实体ID                                                                                           
+CM_TRX_NUMBER            VARCHAR2(20)  Y                  贷项发票编号                                                                                         
+CM_CUSTOMER_TRX_ID       NUMBER        Y                  贷项发票ID                                                                                           
+INV_TRX_NUMBER           VARCHAR2(20)  Y                  应收发票编号                                                                                         
+INV_CUSTOMER_TRX_ID      NUMBER        Y                  发票编号ID                                                                                           
+REVERSAL_GL_DATE         DATE          Y                  取消核销日期                                                                                         
+CREATION_DATE            DATE                   sysdate                                                                                                        
+CREATED_BY               NUMBER                 -1                                                                                                             
+LAST_UPDATED_BY          NUMBER                 -1                                                                                                             
+LAST_UPDATE_DATE         DATE                   sysdate                                                                                                        
+LAST_UPDATE_LOGIN        NUMBER        Y                                                                                                                       
+PROGRAM_APPLICATION_ID   NUMBER        Y                                                                                                                       
+PROGRAM_ID               NUMBER        Y                                                                                                                       
+PROGRAM_UPDATE_DATE      DATE          Y                                                                                                                       
+REQUEST_ID               NUMBER        Y     

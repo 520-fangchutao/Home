@@ -1,0 +1,59 @@
+SCUX_INTERFACE_HEADER_ID NUMBER                           用于接口表设计唯一关键字                                                                             
+SCUX_SESSION_ID          NUMBER                           用于接口表批次数据                                                                                   
+SCUX_SOURCE_CODE         VARCHAR2(30)                     来源系统代码，用于追溯字段                                                                           
+SCUX_SOURCE_NUM          VARCHAR2(50)  Y                  来源单据号，用于追溯字段                                                                             
+SCUX_SOURCE_ID           NUMBER        Y                  来源数据行ID，用于追溯数字型字段                                                                     
+SCUX_PROCESS_GROUP_ID    NUMBER        Y                  后台处理组ID，供分批、并发控制用                                                                     
+SCUX_PROCESS_STEP        VARCHAR2(100) Y                  当前程序处理到哪一个步骤                                                                             
+SCUX_PROCESS_STATUS      VARCHAR2(10)           'PENDING' 后台处理状态，约定：
+PENDING/用户已确认，数据可以导入
+RUNNING/通过验证，数据正在处理状态
+ERROR/出错，数据验证不通过
+COMPLETE/数据已经进入接口，用户不可以修改 
+SCUX_PROCESS_DATE        DATE          Y                  后台处理日期                                                                                         
+SCUX_PROCESS_MESSAGE     VARCHAR2(240) Y                  后台处理信息                                                                                         
+ORG_ID                   NUMBER        Y                  OU与OU名称必填一项                                                                                   
+SCUX_ORG_NAME            VARCHAR2(240) Y                  OU与OU名称必填一项                                                                                   
+RECEIPT_NUMBER           VARCHAR2(50)  Y                  收款编号与收款id必填一项                                                                             
+RECEIPT_ID               NUMBER        Y                  收款编号与收款id必填一项                                                                             
+RECEIPT_AMOUNT           NUMBER        Y                  收款总金额                                                                                           
+UNAPPLIED_AMOUNT         NUMBER        Y                  未核销金额                                                                                           
+APPLIED_AMOUNT           NUMBER        Y                  本次核销金额                                                                                         
+APPLIED_DATE             DATE          Y                  核销日期                                                                                             
+APPLIED_GL_DATE          DATE          Y                  核销总账日期                                                                                         
+CURRENCY_CONVERSION_RATE NUMBER        Y        1         发票对应收款汇率，默认为1；                                                                          
+CURRENCY_CODE            VARCHAR2(30)  Y                  收款币种                                                                                             
+TRX_NUMBER               VARCHAR2(50)  Y                  发票编号与发票id必填一项                                                                             
+CUSTOMER_TRX_ID          NUMBER        Y                  发票编号与发票id必填一项                                                                             
+TRX_DATE                 VARCHAR2(20)  Y                  发票日期                                                                                             
+TRX_CLASS_CODE           VARCHAR2(10)  Y                  发票分类                                                                                             
+PAYMENT_SCHEDULE_ID      NUMBER        Y                  付款计划ID                                                                                           
+AMOUNT_DUE_REMAINING     NUMBER        Y                  发票剩余金额                                                                                         
+TRX_CURRENCY_CODE        VARCHAR2(30)  Y                  发票币种                                                                                             
+RATE_DIVER               NUMBER        Y                  汇差                                                                                                 
+TRX_RATE                 NUMBER        Y                  发票汇率                                                                                             
+CREATION_DATE            DATE                   sysdate                                                                                                        
+CREATED_BY               NUMBER                 -1                                                                                                             
+LAST_UPDATED_BY          NUMBER                 -1                                                                                                             
+LAST_UPDATE_DATE         DATE                   sysdate                                                                                                        
+LAST_UPDATE_LOGIN        NUMBER        Y                                                                                                                       
+PROGRAM_APPLICATION_ID   NUMBER        Y                                                                                                                       
+PROGRAM_ID               NUMBER        Y                                                                                                                       
+PROGRAM_UPDATE_DATE      DATE          Y                                                                                                                       
+REQUEST_ID               NUMBER        Y                                                                                                                       
+ATTRIBUTE_CATEGORY       VARCHAR2(30)  Y                                                                                                                       
+ATTRIBUTE1               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE2               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE3               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE4               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE5               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE6               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE7               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE8               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE9               VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE10              VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE11              VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE12              VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE13              VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE14              VARCHAR2(240) Y                                                                                                                       
+ATTRIBUTE15              VARCHAR2(240) Y

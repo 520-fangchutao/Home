@@ -1,0 +1,24 @@
+Cash_Receipt_Id收款ID
+Applied_Payment_Schedule_Id付款ID
+Amount_Applied核销额
+StatusACC记帐 APP已核销 UNAPP未核销 UNID未标识
+Amount_Applied_From分配的收款额
+Posting_Control_Id过账标识，Posting_Control_Id=-3表示未过账
+Trans_To_Receipt_Rate交叉汇率
+Application_TypeCASH现金收款，CM贷项通知单
+Confirmed_Flag Y收款确认标记
+Unearned_Discount_Taken App.Earned_Discount_Taken+Unearned_Discount_Taken=折扣
+Apply_Date核销日期 Apply_Date-DUE_DATE=延迟天数
+Gl_DateGL 日期
+Gl_Posted_Date过账日期
+Reversal_Gl_Date冲销GL日期
+Receivables_Trx_Id应收款活动ID
+Acctd_Amount_Applied_To本位币核销金额
+Acctd_Amount_Applied_FromAcctd_Amount_Applied_From-Acctd_Amount_Applied_To=汇兑损益
+Comments备注
+Receivables_Trx_Id核销发票ID
+Application_Ref_Type核销参考类型
+Application_Ref_Id核销参考ID
+Application_Ref_Num核销参考编号
+Customer_Reference客户提供参考
+Customer_Reason客户提供原因
