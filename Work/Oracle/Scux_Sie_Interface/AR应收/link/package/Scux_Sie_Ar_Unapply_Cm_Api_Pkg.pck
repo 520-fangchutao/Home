@@ -5,48 +5,48 @@ CREATE OR REPLACE PACKAGE Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
   All rights reserved 
   ===============================================================
   Program Name:   Scux_Sie_Ar_Unapply_Cm_Api_Pkg
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:    :   2018-09-18
   Purpose     :   
-  Description : Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏúAPI
+  Description : åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€API
   
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0     2018-09-18    SIE Ì·¼Ò¿¡        Creation
-  V1.1     2018-12-17    SIE ¹ù½£          ±ê×¼»¯ÐÞ¸Ä
-  V1.2        2019-03-12    SIEÕÅ¿ÉÓ¯      Do_Import·½·¨Ìí¼ÓPv_Created_by²ÎÊýÓë
+  V1.0     2018-09-18    SIE è°­å®¶ä¿Š        Creation
+  V1.1     2018-12-17    SIE éƒ­å‰‘          æ ‡å‡†åŒ–ä¿®æ”¹
+  V1.2        2019-03-12    SIEå¼ å¯ç›ˆ      Do_Importæ–¹æ³•æ·»åŠ Pv_Created_byå‚æ•°ä¸Ž
   ===============================================================*/
 
   /*===============================================================
   Program Name:   Do_Import
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:   :    2018-09-18
-  Purpose     :  Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏúAPI
+  Purpose     :  åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€API
   
   Parameters  :
-              Pt_Iface_Tbl         IN SCUX_SIE_AR_UNAPP_CM_TBL --ARÈ¡ÏûCMºËÏúÐÅÏ¢
-              Pv_Scux_Source_Code  IN VARCHAR2 --Êý¾ÝÀ´Ô´
-              Pv_Synchro_Flag      IN VARCHAR2 --Í¬²½»¹ÊÇÒì²½µ÷ÓÃ·½Ê½
-              Pv_Init_Flag         IN VARCHAR2 --ÍâÎ§ÏµÍ³µ÷ÓÃÐèÒª³õÊ¼»¯»·¾³
-              Pv_Language          IN VARCHAR2 --ÓïÑÔ
+              Pt_Iface_Tbl         IN SCUX_SIE_AR_UNAPP_CM_TBL --ARå–æ¶ˆCMæ ¸é”€ä¿¡æ¯
+              Pv_Scux_Source_Code  IN VARCHAR2 --æ•°æ®æ¥æº
+              Pv_Synchro_Flag      IN VARCHAR2 --åŒæ­¥è¿˜æ˜¯å¼‚æ­¥è°ƒç”¨æ–¹å¼
+              Pv_Init_Flag         IN VARCHAR2 --å¤–å›´ç³»ç»Ÿè°ƒç”¨éœ€è¦åˆå§‹åŒ–çŽ¯å¢ƒ
+              Pv_Language          IN VARCHAR2 --è¯­è¨€
   Return  :
-              Xn_Scux_Session_Id   OUT NUMBER  --Åú´ÎID
-              Xv_Ret_Status        OUT VARCHAR2--×´Ì¬
-              Xv_Ret_Message       OUT VARCHAR2--´íÎóÐÅÏ¢
-  Description: Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏúAPI
+              Xn_Scux_Session_Id   OUT NUMBER  --æ‰¹æ¬¡ID
+              Xv_Ret_Status        OUT VARCHAR2--çŠ¶æ€
+              Xv_Ret_Message       OUT VARCHAR2--é”™è¯¯ä¿¡æ¯
+  Description: åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€API
       
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0      2018-07-25    SIE Ì·¼Ò¿¡         Creation    
-  V1.1     2018-12-17    SIE ¹ù½£          ±ê×¼»¯ÐÞ¸Ä
-    V1.2        2019-03-12    SIEÕÅ¿ÉÓ¯      Do_Import·½·¨Ìí¼ÓPv_Created_by²ÎÊýÓë
+  V1.0      2018-07-25    SIE è°­å®¶ä¿Š         Creation    
+  V1.1     2018-12-17    SIE éƒ­å‰‘          æ ‡å‡†åŒ–ä¿®æ”¹
+    V1.2        2019-03-12    SIEå¼ å¯ç›ˆ      Do_Importæ–¹æ³•æ·»åŠ Pv_Created_byå‚æ•°ä¸Ž
   ===============================================================*/
   PROCEDURE Do_Import(Pt_Iface_Tbl        IN Scux_Sie_Ar_Unapp_Cm_Tbl
                      ,Pv_Scux_Source_Code IN VARCHAR2
-                     ,Pv_Synchro_Flag     IN VARCHAR2 DEFAULT 'Y' -- ÊÇ·ñÍ¬²½µ÷ÓÃ
-                     ,Pv_Init_Flag        IN VARCHAR2 DEFAULT 'N' --V1.1 'Y' --ÊÇ·ñ³õÊ¼»¯»·¾³
+                     ,Pv_Synchro_Flag     IN VARCHAR2 DEFAULT 'Y' -- æ˜¯å¦åŒæ­¥è°ƒç”¨
+                     ,Pv_Init_Flag        IN VARCHAR2 DEFAULT 'N' --V1.1 'Y' --æ˜¯å¦åˆå§‹åŒ–çŽ¯å¢ƒ
                      ,Pv_Language         IN VARCHAR2 DEFAULT 'ZHS'
                      ,Xn_Scux_Session_Id  OUT NUMBER
                      ,Xv_Ret_Status       OUT VARCHAR2
@@ -60,38 +60,38 @@ END Scux_Sie_Ar_Unapply_Cm_Api_Pkg;
 CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
 
   Gv_Package_Name CONSTANT VARCHAR2(30) := 'Scux_Sie_Ar_Unapply_Cm_Api_Pkg';
-  Gv_Pending      CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Pending; -- 'PENDING'; --´ý¶¨
-  --Gv_Running      CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Running; -- 'RUNNING'; --ÔËÐÐÖÐ
-  --Gv_Submit       CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Submit; -- 'SUBMIT'; --ÒÑÌá½»(ÓÃÓÚÒì²½µ÷ÓÃ²¢·¢ÇëÇóÖÐ¼ä×´Ì¬
-  --Gv_Completed    CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Completed; -- 'COMPLETED'; --ÒÑÍê³É
-  Gv_Error CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Error; -- 'ERROR'; --´íÎó
+  Gv_Pending      CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Pending; -- 'PENDING'; --å¾…å®š
+  --Gv_Running      CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Running; -- 'RUNNING'; --è¿è¡Œä¸­
+  --Gv_Submit       CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Submit; -- 'SUBMIT'; --å·²æäº¤(ç”¨äºŽå¼‚æ­¥è°ƒç”¨å¹¶å‘è¯·æ±‚ä¸­é—´çŠ¶æ€
+  --Gv_Completed    CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Completed; -- 'COMPLETED'; --å·²å®Œæˆ
+  Gv_Error CONSTANT VARCHAR2(20) := Scux_Sie_Interface_Pkg.Gv_Error; -- 'ERROR'; --é”™è¯¯
 
   Gv_Date_Type CONSTANT VARCHAR2(20) := 'SOA';
 
-  Gv_Application_Code CONSTANT VARCHAR2(30) := Scux_Fnd_Log.Gv_Application_Code; --ADD BY SIE Ì·¼Ò¿¡ 2018/8/31
+  Gv_Application_Code CONSTANT VARCHAR2(30) := Scux_Fnd_Log.Gv_Application_Code; --ADD BY SIE è°­å®¶ä¿Š 2018/8/31
   --v1.2    ADD   START--
-  Gn_User_Id NUMBER := Fnd_Global.User_Id; --µÇÂ¼ERPÕËºÅID
+  Gn_User_Id NUMBER := Fnd_Global.User_Id; --ç™»å½•ERPè´¦å·ID
   --V1.2    ADD    END-
   /*===============================================================
   Program Name:    Get_Scux_Interface_Header_Id
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:    :   2018-07-01
-  Purpose     :   Ö÷´Ó±í»ñÈ¡Ö÷±íµÄÍ·ID
+  Purpose     :   ä¸»ä»Žè¡¨èŽ·å–ä¸»è¡¨çš„å¤´ID
   Parameters  :
-               pn_Scux_Session_Id          IN NUMBER --ÈÕ¼ÇÕÊÀàÐÅÏ¢
-               pv_Scux_Source_Code         IN VARCHAR2--Êý¾ÝÀ´Ô´
-               pv_Scux_Source_Num          IN VARCHAR2 --À´Ô´±àºÅ
+               pn_Scux_Session_Id          IN NUMBER --æ—¥è®°å¸ç±»ä¿¡æ¯
+               pv_Scux_Source_Code         IN VARCHAR2--æ•°æ®æ¥æº
+               pv_Scux_Source_Num          IN VARCHAR2 --æ¥æºç¼–å·
   Return  :
-              Xn_Scux_Interface_Header_IdOUT NUMBER --Ö÷±íheader_id
-              Xv_Ret_Status        OUT VARCHAR2--×´Ì¬
-              Xv_Ret_Message       OUT VARCHAR2--´íÎóÐÅÏ¢
-  Description: Ö÷´Ó±í»ñÈ¡Ö÷±íµÄÍ·ID
-  ÓÐÖ÷´Ó¹ØÏµµÄÁ½×é¶ÔÏñÒÔScux_Source_Code£¬Scux_Source_Num½¨Á¢Ö÷´Ó¹ØÁª
+              Xn_Scux_Interface_Header_IdOUT NUMBER --ä¸»è¡¨header_id
+              Xv_Ret_Status        OUT VARCHAR2--çŠ¶æ€
+              Xv_Ret_Message       OUT VARCHAR2--é”™è¯¯ä¿¡æ¯
+  Description: ä¸»ä»Žè¡¨èŽ·å–ä¸»è¡¨çš„å¤´ID
+  æœ‰ä¸»ä»Žå…³ç³»çš„ä¸¤ç»„å¯¹åƒä»¥Scux_Source_Codeï¼ŒScux_Source_Numå»ºç«‹ä¸»ä»Žå…³è”
       
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0      2018-09-18    SIE Ì·¼Ò¿¡         Creation    
+  V1.0      2018-09-18    SIE è°­å®¶ä¿Š         Creation    
   ===============================================================*/
   PROCEDURE Get_Scux_Interface_Header_Id(Pn_Scux_Session_Id          IN NUMBER
                                         ,Pv_Scux_Source_Code         IN VARCHAR2
@@ -127,21 +127,21 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
 
   /*===============================================================
   Program Name:   Validate_Data
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:    :   2018-07-01
-  Purpose     :   ÑéÖ¤±ØÊäÈë×Ö¶Î²»ÄÜÎª¿Õ
+  Purpose     :   éªŒè¯å¿…è¾“å…¥å­—æ®µä¸èƒ½ä¸ºç©º
   Parameters  :
-              Pt_Iface_Tbl         IN Scux_Sie_Gl_Journal_Tbl --ÈÕ¼ÇÕÊÀàÐÅÏ¢
-              Pv_Scux_Source_Code  IN VARCHAR2 --Êý¾ÝÀ´Ô´
+              Pt_Iface_Tbl         IN Scux_Sie_Gl_Journal_Tbl --æ—¥è®°å¸ç±»ä¿¡æ¯
+              Pv_Scux_Source_Code  IN VARCHAR2 --æ•°æ®æ¥æº
   Return  :
-              Xv_Ret_Status        OUT VARCHAR2--×´Ì¬
-              Xv_Ret_Message       OUT VARCHAR2--´íÎóÐÅÏ¢
-  Description: ÑéÖ¤±ØÊäÈë×Ö¶Î²»ÄÜÎª¿Õ
+              Xv_Ret_Status        OUT VARCHAR2--çŠ¶æ€
+              Xv_Ret_Message       OUT VARCHAR2--é”™è¯¯ä¿¡æ¯
+  Description: éªŒè¯å¿…è¾“å…¥å­—æ®µä¸èƒ½ä¸ºç©º
       
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0      2018-09-18    SIE Ì·¼Ò¿¡         Creation    
+  V1.0      2018-09-18    SIE è°­å®¶ä¿Š         Creation    
   ===============================================================*/
   PROCEDURE Validate_Data(Pt_Iface_Tbl        IN Scux_Sie_Ar_Unapp_Cm_Tbl
                          ,Pv_Scux_Source_Code IN VARCHAR
@@ -157,7 +157,7 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
     IF Pv_Scux_Source_Code IS NULL THEN
       Xv_Ret_Status  := Fnd_Api.g_Ret_Sts_Error;
       Xv_Ret_Message := Scux_Fnd_Message.Get_Messages(Pv_Application_Code => Gv_Application_Code
-                                                     ,Pv_Message_Name     => 'SCUX_SIE_PUB_001' --²»ÄÜÎª¿Õ
+                                                     ,Pv_Message_Name     => 'SCUX_SIE_PUB_001' --ä¸èƒ½ä¸ºç©º
                                                      ,Pv_Token1           => '1'
                                                      ,Pv_Value1           => 'Scux_Source_Code');
       Scux_Fnd_Exception.Raise_Error(Pv_Api     => Lv_Api
@@ -167,11 +167,11 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
     END IF;
   
     FOR i IN Pt_Iface_Tbl.First .. Pt_Iface_Tbl.Last LOOP
-      --SCUX_SOURCE_NUM Îª±ØÊäÏî
+      --SCUX_SOURCE_NUM ä¸ºå¿…è¾“é¡¹
       IF Pt_Iface_Tbl(i).Scux_Source_Num IS NULL THEN
         Xv_Ret_Status  := Fnd_Api.g_Ret_Sts_Error;
         Xv_Ret_Message := Scux_Fnd_Message.Get_Messages(Pv_Application_Code => Gv_Application_Code
-                                                       ,Pv_Message_Name     => 'SCUX_SIE_PUB_001' --²»ÄÜÎª¿Õ
+                                                       ,Pv_Message_Name     => 'SCUX_SIE_PUB_001' --ä¸èƒ½ä¸ºç©º
                                                        ,Pv_Token1           => '1'
                                                        ,Pv_Value1           => 'SCUX_SOURCE_NUM');
         Scux_Fnd_Exception.Raise_Error(Pv_Api     => Lv_Api
@@ -193,24 +193,24 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
 
   /*===============================================================
   Program Name:   Do_Insert_Process
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:    :   2018-07-01
-  Purpose     :   Êý¾ÝÐ´Èë½Ó¿Ú±í
+  Purpose     :   æ•°æ®å†™å…¥æŽ¥å£è¡¨
   Parameters  :
-              Pt_Iface_Tbl         IN Scux_Sie_Gl_Journal_Tbl --ÈÕ¼ÇÕÊÀàÐÅÏ¢
-              Pn_Scux_Session_Id   IN NUMBER   --Êý¾ÝÅú´ÎID
-              Pv_Scux_Source_Code  IN VARCHAR2 --Êý¾ÝÀ´Ô´
+              Pt_Iface_Tbl         IN Scux_Sie_Gl_Journal_Tbl --æ—¥è®°å¸ç±»ä¿¡æ¯
+              Pn_Scux_Session_Id   IN NUMBER   --æ•°æ®æ‰¹æ¬¡ID
+              Pv_Scux_Source_Code  IN VARCHAR2 --æ•°æ®æ¥æº
   Return  :
-              Xn_Count             OUT NUMBER  --Ð´Èë½Ó¿Ú¼ÇÂ¼Êý
-              Xv_Ret_Status        OUT VARCHAR2--×´Ì¬
-              Xv_Ret_Message       OUT VARCHAR2--´íÎóÐÅÏ¢
-  Description: Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏúAPI
+              Xn_Count             OUT NUMBER  --å†™å…¥æŽ¥å£è®°å½•æ•°
+              Xv_Ret_Status        OUT VARCHAR2--çŠ¶æ€
+              Xv_Ret_Message       OUT VARCHAR2--é”™è¯¯ä¿¡æ¯
+  Description: åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€API
       
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0      2018-09-18    SIE Ì·¼Ò¿¡         Creation    
-    V1.2     2019-03-12    SIEÕÅ¿ÉÓ¯       ÐÞ¸ÄCREATED_BYÓëLAST_UPDATE_BYµÄ´«²Î
+  V1.0      2018-09-18    SIE è°­å®¶ä¿Š         Creation    
+    V1.2     2019-03-12    SIEå¼ å¯ç›ˆ       ä¿®æ”¹CREATED_BYä¸ŽLAST_UPDATE_BYçš„ä¼ å‚
   ===============================================================*/
   PROCEDURE Do_Insert_Process(Pt_Iface_Tbl        IN Scux_Sie_Ar_Unapp_Cm_Tbl
                              ,Pn_Scux_Session_Id  IN NUMBER
@@ -252,7 +252,7 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
       -- Lt_Iface_Hrec.Reversal_Gl_Date    := Pt_Iface_Tbl(i).Reversal_Gl_Date;
     
       -----------------------------------------------  
-      --ÈÕÆÚ×Ö¶Î×ª»»
+      --æ—¥æœŸå­—æ®µè½¬æ¢
       Scux_Sie_Interface_Pkg.Date_Conversion(Pv_Date        => Scux_Sie_Interface_Pkg.Data_Format(Pt_Iface_Tbl(i).Reversal_Gl_Date)
                                             ,Pv_Date_Type   => Gv_Date_Type
                                             ,Xd_Date        => Lt_Iface_Hrec.Reversal_Gl_Date
@@ -296,23 +296,23 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
 
   /*===============================================================
   Program Name:   Do_Submit_Process
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:    :   2018-07-01
-  Purpose     :   Í¬²½»òÒì²½µ÷ÓÃÓ¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏú
+  Purpose     :   åŒæ­¥æˆ–å¼‚æ­¥è°ƒç”¨åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€
   Parameters  :
-              Pn_Scux_Session_Id   IN NUMBER   --Åú´ÎID
-              Pv_Scux_Source_Code  IN VARCHAR2 --Êý¾ÝÀ´Ô´
-              Pv_Synchro_Flag      IN VARCHAR2 --Í¬²½»¹ÊÇÒì²½µ÷ÓÃ·½Ê½
+              Pn_Scux_Session_Id   IN NUMBER   --æ‰¹æ¬¡ID
+              Pv_Scux_Source_Code  IN VARCHAR2 --æ•°æ®æ¥æº
+              Pv_Synchro_Flag      IN VARCHAR2 --åŒæ­¥è¿˜æ˜¯å¼‚æ­¥è°ƒç”¨æ–¹å¼
   Return  :
-              Xv_Ret_Status        OUT VARCHAR2--×´Ì¬
-              Xv_Ret_Message       OUT VARCHAR2--´íÎóÐÅÏ¢
-  Description: Í¬²½»òÒì²½µ÷ÓÃÓ¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏú API
+              Xv_Ret_Status        OUT VARCHAR2--çŠ¶æ€
+              Xv_Ret_Message       OUT VARCHAR2--é”™è¯¯ä¿¡æ¯
+  Description: åŒæ­¥æˆ–å¼‚æ­¥è°ƒç”¨åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€ API
       
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0      2018-09-18   SIE Ì·¼Ò¿¡        Creation   
-  V1.1      2018-12-17   SIE ¹ù½£          Ôö¼Ó Pv_Init_Flag ²ÎÊý
+  V1.0      2018-09-18   SIE è°­å®¶ä¿Š        Creation   
+  V1.1      2018-12-17   SIE éƒ­å‰‘          å¢žåŠ  Pv_Init_Flag å‚æ•°
   ===============================================================*/
   PROCEDURE Do_Submit_Process(Pn_Scux_Session_Id  IN NUMBER
                              ,Pv_Scux_Source_Code IN VARCHAR
@@ -332,7 +332,7 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
                       ,Lv_Procedure_Name || Scux_Fnd_Log.Gv_Begin);
     IF Pv_Synchro_Flag = 'Y' THEN
       Scux_Fnd_Log.Step(Lv_Api
-                       ,'2.Í¬²½µ÷ÓÃ£º-------------');
+                       ,'2.åŒæ­¥è°ƒç”¨ï¼š-------------');
       Scux_Sie_Ar_Unapply_Cm_Imp_Pkg.Do_Import(Pn_Scux_Session_Id  => Pn_Scux_Session_Id
                                               ,Pv_Scux_Source_Code => Pv_Scux_Source_Code
                                               ,Pv_Init_Flag        => Pv_Init_Flag --V1.1 'Y'
@@ -343,10 +343,10 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
     ELSE
     
       Scux_Fnd_Log.Step(Lv_Api
-                       ,'3.Òì²½µ÷ÓÃ£º-------------');
+                       ,'3.å¼‚æ­¥è°ƒç”¨ï¼š-------------');
       Ln_Request_Id := Fnd_Request.Submit_Request(Gv_Application_Code
                                                  ,'SCUX_SIE_AR_UNAPPLY_CM_IMP_PKG'
-                                                 ,'SCUX.Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏú'
+                                                 ,'SCUX.åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€'
                                                  ,To_Char(SYSDATE
                                                          ,'YYYY/MM/DD HH24:MI:SS')
                                                  ,FALSE
@@ -361,7 +361,7 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
             ,0) = 0 THEN
       
         Xv_Ret_Message := Scux_Fnd_Message.Get_Messages(Pv_Application_Code => 'AR'
-                                                       ,Pv_Message_Name     => 'AR_API_SYSP_CONC_SUBMIT_FAIL' --Î´ÄÜÌá½»²¢·¢ÇëÇó¡£                        
+                                                       ,Pv_Message_Name     => 'AR_API_SYSP_CONC_SUBMIT_FAIL' --æœªèƒ½æäº¤å¹¶å‘è¯·æ±‚ã€‚                        
                                                         );
       
         Xv_Ret_Message := Lv_Api || Xv_Ret_Message;
@@ -390,31 +390,31 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
 
   /*===============================================================
   Program Name:   Do_Import
-  Author      :   SIE Ì·¼Ò¿¡
+  Author      :   SIE è°­å®¶ä¿Š
   Created:    :   2018-07-01
-  Purpose     :   Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏúAPI
+  Purpose     :   åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€API
   Parameters  :
-              Pt_Iface_Tbl         IN Scux_Sie_Gl_Journal_Tbl --ÈÕ¼ÇÕÊÀàÐÅÏ¢
-              Pv_Scux_Source_Code  IN VARCHAR2 --Êý¾ÝÀ´Ô´
-              Pv_Synchro_Flag      IN VARCHAR2 --Í¬²½»¹ÊÇÒì²½µ÷ÓÃ·½Ê½
-              Pv_Init_Flag         IN VARCHAR2 --ÍâÎ§ÏµÍ³µ÷ÓÃÐèÒª³õÊ¼»¯»·¾³
-              Pv_Language          IN VARCHAR2 --ÓïÑÔ
+              Pt_Iface_Tbl         IN Scux_Sie_Gl_Journal_Tbl --æ—¥è®°å¸ç±»ä¿¡æ¯
+              Pv_Scux_Source_Code  IN VARCHAR2 --æ•°æ®æ¥æº
+              Pv_Synchro_Flag      IN VARCHAR2 --åŒæ­¥è¿˜æ˜¯å¼‚æ­¥è°ƒç”¨æ–¹å¼
+              Pv_Init_Flag         IN VARCHAR2 --å¤–å›´ç³»ç»Ÿè°ƒç”¨éœ€è¦åˆå§‹åŒ–çŽ¯å¢ƒ
+              Pv_Language          IN VARCHAR2 --è¯­è¨€
   Return  :
-              Xn_Scux_Session_Id   OUT NUMBER  --Åú´ÎID
-              Xv_Ret_Status        OUT VARCHAR2--×´Ì¬
-              Xv_Ret_Message       OUT VARCHAR2--´íÎóÐÅÏ¢
-  Description: Ó¦ÊÕ´ûÏî·¢Æ±È¡ÏûºËÏúAPI
+              Xn_Scux_Session_Id   OUT NUMBER  --æ‰¹æ¬¡ID
+              Xv_Ret_Status        OUT VARCHAR2--çŠ¶æ€
+              Xv_Ret_Message       OUT VARCHAR2--é”™è¯¯ä¿¡æ¯
+  Description: åº”æ”¶è´·é¡¹å‘ç¥¨å–æ¶ˆæ ¸é”€API
       
   Update History
   Version    Date         Name            Description
   --------  ----------  ---------------  --------------------
-  V1.0      2018-09-18    SIE Ì·¼Ò¿¡         Creation    
-  V1. 2       2019-03-12    SIEÕÅ¿ÉÓ¯     V1.        2019-03-12    SIEÕÅ¿ÉÓ¯      Do_Import·½·¨Ìí¼ÓPv_Created_by²ÎÊýÓëScux_Sie_Interface_Pkg.Get_Created_By(Pv_Created_By);
+  V1.0      2018-09-18    SIE è°­å®¶ä¿Š         Creation    
+  V1. 2       2019-03-12    SIEå¼ å¯ç›ˆ     V1.        2019-03-12    SIEå¼ å¯ç›ˆ      Do_Importæ–¹æ³•æ·»åŠ Pv_Created_byå‚æ•°ä¸ŽScux_Sie_Interface_Pkg.Get_Created_By(Pv_Created_By);
   ===============================================================*/
   PROCEDURE Do_Import(Pt_Iface_Tbl        IN Scux_Sie_Ar_Unapp_Cm_Tbl
                      ,Pv_Scux_Source_Code IN VARCHAR2
-                     ,Pv_Synchro_Flag     IN VARCHAR2 DEFAULT 'Y' -- ÊÇ·ñÍ¬²½µ÷ÓÃ
-                     ,Pv_Init_Flag        IN VARCHAR2 DEFAULT 'N' --V1.1 'Y' --ÊÇ·ñ³õÊ¼»¯»·¾³
+                     ,Pv_Synchro_Flag     IN VARCHAR2 DEFAULT 'Y' -- æ˜¯å¦åŒæ­¥è°ƒç”¨
+                     ,Pv_Init_Flag        IN VARCHAR2 DEFAULT 'N' --V1.1 'Y' --æ˜¯å¦åˆå§‹åŒ–çŽ¯å¢ƒ
                      ,Pv_Language         IN VARCHAR2 DEFAULT 'ZHS'
                      ,Xn_Scux_Session_Id  OUT NUMBER
                      ,Xv_Ret_Status       OUT VARCHAR2
@@ -442,7 +442,7 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
     Gn_User_Id := Scux_Sie_Interface_Pkg.Get_Created_By(Pv_Created_By);
     --V1.2     ADD    END ---
     Scux_Fnd_Log.Step(Lv_Api
-                     ,'1.Check_Parameter£º-------------');
+                     ,'1.Check_Parameterï¼š-------------');
     Validate_Data(Pt_Iface_Tbl        => Pt_Iface_Tbl
                  ,Pv_Scux_Source_Code => Pv_Scux_Source_Code
                  ,Xv_Ret_Status       => Xv_Ret_Status
@@ -451,7 +451,7 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
                                       ,Pv_Ret_Message => Xv_Ret_Message);
   
     Scux_Fnd_Log.Step(Lv_Api
-                     ,'2.Insert Data£º-------------');
+                     ,'2.Insert Dataï¼š-------------');
     Do_Insert_Process(Pt_Iface_Tbl        => Pt_Iface_Tbl
                      ,Pn_Scux_Session_Id  => Xn_Scux_Session_Id
                      ,Pv_Scux_Source_Code => Pv_Scux_Source_Code
@@ -463,9 +463,9 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
     ---------------------------------------------------------------------
   
     IF Ln_Count > 0 THEN
-      --Í¬²½»òÒì²½µ÷ÓÃµ¼Èë½Ó¿Ú
+      --åŒæ­¥æˆ–å¼‚æ­¥è°ƒç”¨å¯¼å…¥æŽ¥å£
       Scux_Fnd_Log.Step(Lv_Api
-                       ,'3.Submit_Process£º-------------');
+                       ,'3.Submit_Processï¼š-------------');
       Do_Submit_Process(Pn_Scux_Session_Id  => Xn_Scux_Session_Id
                        ,Pv_Scux_Source_Code => Pv_Scux_Source_Code
                        ,Pv_Synchro_Flag     => Pv_Synchro_Flag
@@ -475,10 +475,10 @@ CREATE OR REPLACE PACKAGE BODY Scux_Sie_Ar_Unapply_Cm_Api_Pkg AS
       Scux_Fnd_Exception.Raise_Exception(Pv_Ret_Status  => Xv_Ret_Status
                                         ,Pv_Ret_Message => Xv_Ret_Message);
     ELSE
-      --xv_Ret_Status := 'Ã»ÓÐÐèÒªÌá½»µÄÊý¾Ý';
+      --xv_Ret_Status := 'æ²¡æœ‰éœ€è¦æäº¤çš„æ•°æ®';
       Xv_Ret_Status  := Fnd_Api.g_Ret_Sts_Error;
       Xv_Ret_Message := Scux_Fnd_Message.Get_Messages(Pv_Application_Code => 'SQLGL'
-                                                     ,Pv_Message_Name     => 'GL_COA_SVI_DATA_NOT_PASSED' --API Ã»ÓÐÕÒµ½Òª´¦ÀíµÄÊý¾Ý¡£
+                                                     ,Pv_Message_Name     => 'GL_COA_SVI_DATA_NOT_PASSED' --API æ²¡æœ‰æ‰¾åˆ°è¦å¤„ç†çš„æ•°æ®ã€‚
                                                       );
       Scux_Fnd_Exception.Raise_Error(Pv_Api     => Lv_Api
                                     ,Pv_Status  => Xv_Ret_Status

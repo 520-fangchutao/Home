@@ -1,0 +1,9 @@
+cm_customer_trx_id，贷项通知单ID
+cm_trx_number，贷项通知单编号
+inv_customer_trx_id，核销发票ID
+inv_trx_number，核销发票编号
+installment，分期付款
+applied_payment_schedule_id，事务处理余额ID
+receivable_application_id，核销ID
+reversal_gl_date，撤销核销GL日期
+called_from，
